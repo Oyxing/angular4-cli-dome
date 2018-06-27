@@ -10,22 +10,26 @@
     添加用户
   </div>
   <div class="card-block">
+    <!--f   代表的 是form 表单内的值-->
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
       <div class="form-group">
         <label for="name">姓名</label>
+        <!-- minlength  输入最小长度  required  验证需求  必填值-->
         <input type="text" class="form-control"
          [(ngModel)]="user.name"
           name="name"
-          minlength=2
-          required=""/>
+          minlength=2 
+          required=""
+          />
       </div>
       <div class="form-group">
         <label for="email">邮箱</label>
         <input type="text" class="form-control"
          [(ngModel)]="user.email"
-          name="enail"
+          name="email"
           minlength=2
-          required=""/>
+          required=""
+          />
       </div>
       <div class="form-group">
         <label for="phone">手机</label>
@@ -33,7 +37,8 @@
           [(ngModel)]="user.phone"
           name="phone"
           minlength=11
-          required=""/>
+          required=""
+          />
       </div>
       <div class="form-group">
         <label for="balance">收支</label>

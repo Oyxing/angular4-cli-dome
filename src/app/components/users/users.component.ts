@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from '../../services/user.service'
+import { CookieService } from 'ngx-cookie-service';
 // 给数据定义类型
 import { User } from '../../modeis/user'
 @Component({
@@ -8,26 +9,24 @@ import { User } from '../../modeis/user'
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users:User[];
+  users: any[];
   totalOwed:number;
   constructor(
-      public userService:UserService
-  ) { 
-  }
+      public userService:UserService,
+      public cookieService:CookieService
+      
+  ) { }
   ngOnInit() {
     this.userService.getUsers().subscribe(user => {
-        this.users = user;
+        this.users = user.Msg;
         this.getTotalOwed()
     })
   }
   getTotalOwed(){
   let total = 0;
     for(let i = 0;i < this.users.length; i++){
-      total += this.users[i].balance;
+      total += parseFloat(this.users[i].Balance);
     }
     this.totalOwed = total
   }
-  
-
-
 }

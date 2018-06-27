@@ -6,6 +6,7 @@
     <h5 class="pull-right text-muted">收入的合计: {{totalOwed + "元"}}</h5>
   </div>
 </div>
+<!-- if判断后加载此模块 #noUsers -->
 <table *ngIf="users?.length>0;else noUsers" class="table table-striped">
   <thead>
     <th>ID</th>
@@ -17,18 +18,19 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <td>{{user.id}}</td>
-      <td>{{user.name}} </td>
-      <td>{{user.email}} </td>
-      <td>{{user.phone}} </td>
-      <td>{{user.balance + "元"}} </td>
-      <td><a href="#" class="btn btn-secondary btn-sm">
+      <td>{{user.Id}}</td>
+      <td>{{user.Name}} </td>
+      <td>{{user.Email}} </td>
+      <td>{{user.Phone}} </td>
+      <td>{{user.Balance + "元"}} </td>
+      <td><a [routerLink]="['/user/' + user.Id]" href="#" class="btn btn-secondary btn-sm">
         <i class="fa fa-arrow-circle-o-right"></i>详情</a>
       </td>
     </tr>
   </tbody>
 </table>
 
+<!-- #noUsers  是一个组件名 -->
 <ng-template #noUsers>
   <hr>
   <h5>系统里没任何用户</h5>
