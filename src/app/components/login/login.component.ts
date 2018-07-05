@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(){
     this.authService.login(this.email,this.password).subscribe(user=>{
-			if(user.Success == 0){
+      if (user.Success == 0) {
+             console.log('aaaa')
         this.flashMessagesService.show(user.Msg, { cssClass: 'alert-success', timeout: 2000 })
         this.router.navigate(['/']);
         this.cookieService.set("LoginState","true")

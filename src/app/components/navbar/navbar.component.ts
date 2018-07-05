@@ -27,10 +27,10 @@ export class NavbarComponent implements OnInit {
     this.authService.logout();
     this.flashMessagesService.show('账号已退出', { cssClass: 'alert-success', timeout: 2000 })
     this.router.navigate(["/login"]);
-    this.cookieService.set("LoginState","")
+    this.cookieService.set("LoginState", "false")
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     if(this.cookieService.get('LoginState') == "true"){
       this.isLoggedIn = true;
       this.loggedInUser = this.cookieService.get('UserName')

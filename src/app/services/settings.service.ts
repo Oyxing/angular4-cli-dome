@@ -12,7 +12,7 @@ export class SettingsService {
       this.settings = JSON.parse(localStorage.getItem("settings"))
     }
   }
-  getSettings(){
+  getSettings() {
     return this.settings
   }
   changeSettings(settings:Settings){
