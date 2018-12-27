@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\login",
+    "\\src\\app\\guards"
   ],
+  "SelectedNode": "\\src\\app\\guards\\auth.guard.ts",
   "PreviewInSolutionExplorer": false
 }

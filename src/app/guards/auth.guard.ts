@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): Observable<boolean> {
     return this.afAuth.authState.map(auth => {
-      if (this.cookieService.get("LoginState") == 'false') {
+      if (!this.cookieService.get("LoginState")) {
         this.router.navigate(['/login']);
         return false;
       } else {

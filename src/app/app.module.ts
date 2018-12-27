@@ -32,6 +32,7 @@ import { SettingsService } from './services/settings.service'
 import { RegisterGuard } from './guards/register.guard'
 import { AuthGuard } from './guards/auth.guard';
 import { CallBack } from './publiccall/callback';
+import { httpIp } from './publiccall/httpip';
 
 //设置路由
 const appRoutes:Routes = [
@@ -86,6 +87,7 @@ export const firebaseConfig = {
     UserService,
     AuthService,
     CallBack,
+    httpIp,
     SettingsService,
     RegisterGuard,
     AuthGuard,
